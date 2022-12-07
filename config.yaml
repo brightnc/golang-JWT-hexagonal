@@ -1,0 +1,10 @@
+app:
+  port: 8000
+
+db:
+  driver: "mysql"
+  host: "host.docker.internal"
+  port: 3306
+  username: "root"
+  password: "43349690b"
+  database: "hexagonal"
