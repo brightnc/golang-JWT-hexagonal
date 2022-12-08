@@ -11,9 +11,6 @@ func ServeREST() {
 	e := echo.New()
 	custService := app.svr
 	custHttp := httphdl.NewHttphdl(custService)
-
-	// e.GET("/", custHttp.GetAllCustomers)
-	// e.GET("/:id", custHttp.GetCustomerByID)
 	e.POST("/", custHttp.CreateCustomer)
 	e.PUT("/:id", custHttp.UpdateCustomer)
 	e.DELETE("/:id", custHttp.DeleteCustomer)

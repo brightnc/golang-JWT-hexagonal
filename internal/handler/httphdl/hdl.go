@@ -19,26 +19,6 @@ func NewHttphdl(srv port.CustomerService) *httphdl {
 	return &httphdl{srv: srv}
 }
 
-// func (r *httphdl) GetAllCustomers(c echo.Context) error {
-// 	customers, err := r.srv.GetAllCustomer()
-// 	if err != nil {
-// 		fmt.Println(err)
-// 		return echo.ErrBadRequest
-// 	}
-// 	return c.JSON(200, customers)
-// }
-
-// func (r *httphdl) GetCustomerByID(c echo.Context) error {
-// 	id, _ := strconv.Atoi(c.Param("id"))
-// 	customer, err := r.srv.GetCustomerByID(id)
-// 	if err != nil {
-// 		fmt.Println(err)
-// 		return echo.ErrBadRequest
-// 	}
-
-// 	return c.JSON(200, customer)
-// }
-
 func (r *httphdl) CreateCustomer(c echo.Context) error {
 	var request *dto.Customer
 	err := json.NewDecoder(c.Request().Body).Decode(&request)
