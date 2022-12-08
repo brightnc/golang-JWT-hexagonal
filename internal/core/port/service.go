@@ -3,7 +3,9 @@ package port
 import "playground/internal/core/domain"
 
 type CustomerService interface {
-	GetAllCustomer() ([]domain.CustomerResponse, error)
-	GetCustomerByID(id int) (*domain.CustomerResponse, error)
-	CreateCustomer(c *domain.Customer) (*domain.Customer, error)
+	CreateUser(user *domain.IUser) (*domain.IUser, error)
+	UpdateUser(id int, user *domain.IUser) (*domain.UUser, error)
+	DeleteUser(id int) error
+	FindUser(email string) (*domain.UUser, bool)
+	ListUsers() ([]domain.IUser, error)
 }
